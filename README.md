@@ -1,20 +1,22 @@
 # Hype City Roleplay — Launcher
 
-Repositório oficial usado pelo **Hype City Roleplay** para controlar a versão atual do APK e disponibilizar o download do launcher Android.
+Repositório **privado** oficial do Hype City Roleplay.
 
-## Arquivo principal
+Ele mantém o controle de versão do launcher Android e as Releases do APK. O público não precisa acessar este repositório diretamente.
 
-O arquivo `version.json` é a fonte oficial de versão usada pelo launcher e pelo site.
+## Arquivos
 
-Versão inicial configurada:
+- `version.json` — fonte oficial da versão atual do APK.
+- `COMO_PUBLICAR.md` — instruções para publicar novas versões.
+- **Releases** — onde cada APK do launcher será anexado.
+
+## Versão inicial
 
 - Version code: `100`
 - Version name: `1.0`
-- APK: `HypeCityRoleplay-v1.0.apk`
+- APK esperado: `HypeCityRoleplay-v1.0.apk`
 
-## Padrão de nome dos APKs
-
-Use sempre:
+## Padrão do APK
 
 ```
 HypeCityRoleplay-v1.0.apk
@@ -23,20 +25,14 @@ HypeCityRoleplay-v1.2.apk
 HypeCityRoleplay-v2.0.apk
 ```
 
-## Download direto
+## Site oficial
 
-O site usa o endereço de download direto salvo no `version.json`.
+https://hypecityroleplayvx.netlify.app/
 
-Quando existir uma Release publicada com o APK correto, tocar em **Baixar APK** no site inicia o download do arquivo, sem precisar abrir a página do GitHub.
+O site não precisa expor o GitHub. Ele usa Netlify Functions para consultar este repositório privado e entregar a versão/download ao usuário.
 
-## Atualização do launcher
+## Separação de sistemas
 
-Quando uma nova versão for lançada:
+Este repositório controla apenas **APK/launcher**.
 
-1. Compile o APK novo.
-2. Publique uma nova GitHub Release.
-3. Anexe o APK com o nome correspondente à versão.
-4. Atualize `version.json` com o novo `latest_version_code`, `latest_version_name`, `apk_filename`, `apk_url` e `updated_at`.
-5. O launcher passa a considerar a versão antiga desatualizada.
-
-> A DATA do jogo é mantida separadamente. Este repositório controla somente o APK/launcher.
+A DATA Lite/Full do jogo continua separada no sistema próprio de atualização.
